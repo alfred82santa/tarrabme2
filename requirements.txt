@@ -6,3 +6,4 @@ django-oauth2-provider>=0.2.3
 django-guardian>=1.1.1
 Pygments
 Pillow
+pep8
