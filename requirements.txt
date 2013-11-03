@@ -7,3 +7,5 @@ django-guardian>=1.1.1
 Pygments
 Pillow
 pep8
+django-imagekit
+django-bootstrap3

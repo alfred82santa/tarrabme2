@@ -10,7 +10,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-SITE_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
+SRC_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
+SITE_ROOT =  os.path.join(SRC_ROOT, '..')
 DATA_ROOT = os.path.join(SITE_ROOT, 'data')
 
 DATABASES = {
@@ -119,6 +120,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(SRC_ROOT, 'templates')
 )
 
 INSTALLED_APPS = (
@@ -129,10 +131,25 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
+    'bootstrap_admin',
+    'bootstrap3',
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'rest_framework',
+    'imagekit',
+    'users',
+    'orgs',
+    'events',
 )
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+}
+
+AUTH_USER_MODEL = 'users.User'
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 

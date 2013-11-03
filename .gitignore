@@ -3,4 +3,11 @@
 *.pyc
 local_settings.py
 data/static/*
+data/media/*
 data/db/*
+.anjuta/*
+.anjuta_sym_db.db
+.ropeproject/*
+Tarrabme2.bfproject
+tarrabme2.anjuta
+
